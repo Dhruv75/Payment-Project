@@ -1,19 +1,23 @@
+//user.js
+
 const express = require("express");
 
 const { zodSchemaForSignin } = require("../auth_validator");
 const { zodSchema } = require("../auth_validator");
+const { zodSchemaForUpdate } = require("../auth_validator");
 const User = require("../db");
 const mongoose = require("mongoose");
 const jwt = require("jsonwebtoken");
 require("dotenv").config();
-
-console.log(process.env.JWT_SECRET);
+const { authMiddleware } = require("../middleware");
 
 const router = express.Router();
 
 router.get("/", function (req, res) {
   res.send("This is the User page");
 });
+
+/////////////////////////////////////////////////////////  Signup    ////////////////////////////////////////////////////////////////////////////
 
 router.post("/signup", async function (req, res) {
   // Auth Check using zod
@@ -71,6 +75,8 @@ router.post("/signup", async function (req, res) {
   }
 });
 
+/////////////////////////////////////////////////////////  Signin   //////////////////////////////////////////////////////////////////////////////
+
 router.post("/signin", async function (req, res) {
   const result = zodSchemaForSignin.safeParse(req.body);
   if (!result.success) {
@@ -91,9 +97,10 @@ router.post("/signin", async function (req, res) {
   if (user) {
     const token = jwt.sign(
       {
-        userId: user._id,
+        userName: user.userName,
       },
-      process.env.JWT_SECRET
+      process.env.JWT_SECRET,
+      { expiresIn: "1h" }
     );
 
     res.json({
@@ -107,15 +114,41 @@ router.post("/signin", async function (req, res) {
   });
 });
 
+/////////////////////////////////////////////////////////  Update   /////////////////////////////////////////////////////////////////////////////
+
+router.put("/update", authMiddleware, async (req, res) => {
+  const result = zodSchemaForUpdate.safeParse(req.body);
+
+  if (!result.success) {
+    console.error("Validation failed:", result.error.errors);
+    return res.status(400).json({
+      message: "Validation failed",
+      errors: result.error.errors,
+    });
+  }
+
+  try {
+    const updateData = result.data;
+    const userName = req.userName;
+
+    const updatedUser = await User.findOneAndUpdate(
+      { userName: userName },
+      updateData,
+      { new: true } // Return the updated document
+    );
+
+    res.status(200).json(updatedUser);
+  } catch (error) {
+    console.error("Error updating user:", error);
+    res.status(500).json({ message: "Internal server error" });
+  }
+});
+
 router.get("/signup", function (req, res) {
   res.send("This is the Signup page");
 });
 router.get("/signin", function (req, res) {
   res.send("this is the signin page ");
-});
-
-router.get("/login", function (req, res) {
-  res.send("This is The Login page");
 });
 
 module.exports = router;
