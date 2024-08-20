@@ -1,0 +1,107 @@
+[
+  {
+    "userName": "john.doe",
+    "password": "P@ssw0rd123",
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "john.doe@example.com"
+  },
+  {
+    "userName": "jane.smith",
+    "password": "S3cure#Password",
+    "firstName": "Jane",
+    "lastName": "Smith",
+    "email": "jane.smith@example.com"
+  },
+  {
+    "userName": "alice.johnson",
+    "password": "A1ic3$J0hn",
+    "firstName": "Alice",
+    "lastName": "Johnson",
+    "email": "alice.johnson@example.com"
+  },
+  {
+    "userName": "bob.brown",
+    "password": "B0b@Brown!",
+    "firstName": "Bob",
+    "lastName": "Brown",
+    "email": "bob.brown@example.com"
+  },
+  {
+    "userName": "charlie.williams",
+    "password": "Ch@rL1eW!",
+    "firstName": "Charlie",
+    "lastName": "Williams",
+    "email": "charlie.williams@example.com"
+  },
+  {
+    "userName": "david.jones",
+    "password": "Dav!dJ0n3s",
+    "firstName": "David",
+    "lastName": "Jones",
+    "email": "david.jones@example.com"
+  },
+  {
+    "userName": "eve.martin",
+    "password": "Eve@M@rt1n",
+    "firstName": "Eve",
+    "lastName": "Martin",
+    "email": "eve.martin@example.com"
+  },
+  {
+    "userName": "frank.white",
+    "password": "F#@nkWh1te",
+    "firstName": "Frank",
+    "lastName": "White",
+    "email": "frank.white@example.com"
+  },
+  {
+    "userName": "grace.moore",
+    "password": "GraceM00re@",
+    "firstName": "Grace",
+    "lastName": "Moore",
+    "email": "grace.moore@example.com"
+  },
+  {
+    "userName": "henry.taylor",
+    "password": "H3nry_T@yl0r",
+    "firstName": "Henry",
+    "lastName": "Taylor",
+    "email": "henry.taylor@example.com"
+  },
+  {
+    "userName": "isabella.harris",
+    "password": "1s@BellaH@rr1s",
+    "firstName": "Isabella",
+    "lastName": "Harris",
+    "email": "isabella.harris@example.com"
+  },
+  {
+    "userName": "jackson.clark",
+    "password": "J@ck$onCl@rk",
+    "firstName": "Jackson",
+    "lastName": "Clark",
+    "email": "jackson.clark@example.com"
+  },
+  {
+    "userName": "kelly.lewis",
+    "password": "K3lly#L3w1s",
+    "firstName": "Kelly",
+    "lastName": "Lewis",
+    "email": "kelly.lewis@example.com"
+  },
+  {
+    "userName": "liam.walker",
+    "password": "L!@M_W4lk3r",
+    "firstName": "Liam",
+    "lastName": "Walker",
+    "email": "liam.walker@example.com"
+  },
+  {
+    "userName": "mia.allen",
+    "password": "M!@A_4ll3n",
+    "firstName": "Mia",
+    "lastName": "Allen",
+    "email": "mia.allen@example.com"
+  }
+]
