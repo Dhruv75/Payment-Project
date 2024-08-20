@@ -4,10 +4,10 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const cors = require("cors");
-const bodyParser = require("body-parser");
-const zodSchema = require("./auth_validator.js");
 const userRoutes = require("./router/user.js");
+const accountRoutes = require("./router/account.js");
 const protectedRoutes = require("./router/proctedRoute.js");
+
 require("dotenv").config();
 
 app.use(cors());
@@ -15,6 +15,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use("/user", userRoutes);
+app.use("/account", accountRoutes);
 app.use("/protectedRoutes", protectedRoutes);
 app.use("/", (req, res) => {
   res.send("This is home page");
@@ -22,7 +23,9 @@ app.use("/", (req, res) => {
 
 async function ConnectDB() {
   try {
-    await mongoose.connect("mongodb://127.0.0.1:27017/paytmProd");
+    await mongoose.connect(
+      "mongodb+srv://Dhruv:20150057926@cluster1.dlhme.mongodb.net/?retryWrites=true&w=majority&appName=Cluster1"
+    );
     console.log("Connected to mongoDB");
   } catch (error) {
     console.error("Failed to connect to MongoDB:", error.message);
@@ -31,6 +34,7 @@ async function ConnectDB() {
 
 ConnectDB();
 
-app.listen(5000, () => {
-  console.log("server started on port 5000");
+const port = process.env.PORT || 5000;
+app.listen(port, () => {
+  console.log(`Server started on port ${port}`);
 });

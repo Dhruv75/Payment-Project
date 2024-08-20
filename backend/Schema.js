@@ -1,4 +1,4 @@
-// auth_validator.js
+// Schema.js
 const { z } = require("zod");
 
 const zodSchema = z.object({
