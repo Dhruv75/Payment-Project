@@ -14,7 +14,7 @@ export function Send() {
     setStatus("loading");
     axios
       .post(
-        "https://payment-project-backend-e1ra.onrender.com/account/transfer",
+        "https://payment-project.onrender.com/account/transfer",
         { amount: amount, to_id: id },
         {
           headers: {
