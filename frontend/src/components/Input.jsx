@@ -65,7 +65,7 @@ export function InputEle() {
 
     try {
       const response = await axios.post(
-        "https://payment-project-backend-e1ra.onrender.com/user/signup",
+        "https://payment-project.onrender.com/user/signup",
         {
           userName,
           firstName,
