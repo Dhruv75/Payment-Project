@@ -92,6 +92,9 @@ export function Signin() {
                 </Link>
               </p>
             </form>
+            <p className="text-red-500 font-bold border-black border-2">
+              Please wait for 2 minutes after clicking sign in or sign up
+            </p>
           </div>
         </div>
       </div>

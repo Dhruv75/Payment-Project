@@ -11,6 +11,7 @@ export function Signup() {
             heading="SignUp"
             subheading="Enter Your Information to create an account"
           />
+
           <InputEle />
         </div>
       </div>

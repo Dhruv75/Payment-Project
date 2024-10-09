@@ -173,6 +173,9 @@ export function InputEle() {
             </Link>
           </p>
         </form>
+        <p className="text-red-500 font-bold border-black border-2">
+          Please wait for 2 minutes after clicking Submit Button
+        </p>
       </div>
     </>
   );
