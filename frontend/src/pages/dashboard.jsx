@@ -19,7 +19,7 @@ export function Dashboard() {
   async function fetchBalance(userName) {
     try {
       const response = await axios.get(
-        "https://payment-project-backend-e1ra.onrender.com/account/balance",
+        "https://payment-project.onrender.com/account/balance",
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("authToken")}`, // If using JWT for auth
