@@ -14,7 +14,7 @@ export const Users = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "https://payment-project-backend-e1ra.onrender.com/user/find?filter=" +
+          "https://payment-project.onrender.com/user/find?filter=" +
             filter
         );
         setUsers(response.data.user); //array of user
